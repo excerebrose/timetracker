@@ -50,7 +50,7 @@ class ListContainer extends Component {
               onChange={this.handleAMonthChange}
               theme='dark'
             >
-              <span className="month_picker" onClick={this.handlePickerShow}>{pickerLang.months[this.props.month]}, {this.props.year}</span>
+              <span className="month_picker" onClick={this.handlePickerShow}>Selected Month: {pickerLang.months[this.props.month]}, {this.props.year}</span>
             </Picker>
             </div>
           }
