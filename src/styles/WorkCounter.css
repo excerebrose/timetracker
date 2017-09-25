@@ -1,0 +1,17 @@
+.work-counter {
+  height: 200px;
+  border: 1px dashed #f9f9f9;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.work-counter__work {
+  height: 80px;
+  font-size: 50px;
+  display: block;
+  padding: 40px 0;
+}
+
+.work-counter__work > span {
+  font-size: 1.2rem;
+}

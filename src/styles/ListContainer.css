@@ -1,0 +1,41 @@
+.list__container {
+  width: 100%;
+}
+
+.list__container > table {
+  width: 100%;
+  border-collapse:collapse;
+}
+.list__heading {
+  display: block;
+  margin-bottom: 20px 0;
+}
+
+.list__heading__controls {
+  background: #000;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+.list__item {
+  border-bottom: 1px dashed #f9f9f9;
+  line-height: 30px;
+}
+
+.list__item--name {
+  color: #01579B;
+  font-weight: 700;  
+}
+
+.list__item--end {
+  color: #B71C1C;
+}
+.list__item--start {
+  color: #66BB6A;
+}
+
+.month-picker {
+  font-weight: 700;
+  color: #E8022C;
+  cursor: pointer;
+}
