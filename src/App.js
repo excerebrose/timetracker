@@ -21,7 +21,7 @@ class App extends Component {
       return response.json();
     }).then((data) => {
       this.setState({
-        work: data.work.filter((val) => val.name === 'brainnwave'),
+        work: data.work.filter((val) => val.tags && val.tags.indexOf('interrupt') == -1),
         breaks: data.work.filter((val) => val.tags && val.tags.indexOf('interrupt') > -1),
       })
     }).catch((error) => {
