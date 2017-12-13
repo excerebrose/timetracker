@@ -20,8 +20,8 @@ const WorkCounter = ({ work, breaks, year, month}) => {
   
   return(
     <div className="work-counter">
-      <div className="work-counter__work">{(workHours / 60).toFixed(3)} <span>Hours</span></div>
-      <div className="work-counter__break">Total Breaks: {(breakHours / 60).toFixed(3)} hours</div>
+      <div className="work-counter__work">{Math.round(workHours / 60)} <span>Hours</span></div>
+      <div className="work-counter__break">Personal Project Hours: {Math.round(breakHours / 60)} hours</div>
     </div>
   )
 }

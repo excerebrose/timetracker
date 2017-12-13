@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       work: [],
-      breaks: [],
+      personal: [],
       year: (new Date()).getFullYear(),
       month: (new Date()).getMonth(),
     }
@@ -21,11 +21,11 @@ class App extends Component {
       return response.json();
     }).then((data) => {
       this.setState({
-        work: data.work.filter((val) => !val.tags || (val.tags && val.tags.indexOf('interrupt') === -1)),
-        breaks: data.work.filter((val) => val.tags && val.tags.indexOf('interrupt') > -1),
+        work: data.work.filter((val) => (!val.tags || (val.tags && val.tags.indexOf('interrupt') === -1 )) && val.name !== 'personal-project'),
+        personal: data.work.filter((val) => (val.tags && val.tags.indexOf('interrupt') > -1) || (val.name === 'personal-project')),
       })
     }).catch((error) => {
-      console.log(error);
+      console.log(error);   
     })
   }
 
@@ -51,14 +51,14 @@ class App extends Component {
         <div className="App__right">
           <WorkCounter
             work={this.state.work}
-            breaks={this.state.breaks}
+            breaks={this.state.personal}
             year={this.state.year}
             month={this.state.month}
           />
           <ListContainer
             interrupt={true}
-            header={"Interrupts"}
-            logs={this.state.breaks}
+            header={"Personal"}
+            logs={this.state.personal}
             monthCallback={this.handleDateChange}
             year={this.state.year}
             month={this.state.month}
